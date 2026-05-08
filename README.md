@@ -221,3 +221,11 @@ grep -rl "lingshu-template" --exclude-dir=node_modules . | xargs sed -i 's/lings
 ---
 
 **中枢一动，全栈皆通。欢迎来到 AI 原生开发的新纪元。**
+
+---
+
+## 📄 License
+
+[MIT](./LICENSE) © 2026 imrui
+
+> 注：本仓库为架构模板。基于本模板派生的新项目可自行选择协议（默认 `templates/default/package.json` 中 `license` 字段为 `UNLICENSED` 占位，由作者自决）。
