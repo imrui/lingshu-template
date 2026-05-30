@@ -12,7 +12,6 @@ on:
     branches: [master, main]
     paths:
       - 'reference/rules/**'
-      - '.lingshu/**'
       - 'CLAUDE.md'
       - 'AGENTS.md'
 
@@ -26,7 +25,7 @@ jobs:
         with:
           node-version: '20'
       - name: 校验 SSoT 与基线产物一致性
-        run: node .lingshu/scripts/sync-rules.mjs --check --baseline
+        run: npx -y @ruobai/lingshu sync --check --baseline
 
   doctor:
     name: 架构健康度体检
@@ -38,4 +37,4 @@ jobs:
         with:
           node-version: '20'
       - name: 运行 doctor
-        run: node .lingshu/scripts/doctor.mjs
+        run: npx -y @ruobai/lingshu doctor
