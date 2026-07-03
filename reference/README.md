@@ -16,9 +16,9 @@
 
 ## 📂 目录结构
 
-- **`docs/`**: **真源文档**。存储 PRD、API 契约、状态机定义。
-- **`experience/`**: **经验沉淀**。存储 Pitfalls（避坑指南）和 Best Practices。
-- **`management/`**: **动态治理层**。下设 `plans/`（战略方案）、`tasks/`（战术任务）、`walkthroughs/`（变更存证）与 `reports/`（审计报告）。
+- **`rules/`**: **AI 规则真源**。分发到 `CLAUDE.md`、`AGENTS.md` 等产物。
+- **`docs/`**: **真源文档**。存储 PRD、API 契约、状态机定义；可按需扩张 `prd/`、`tad/` 等子目录（见 [docs/README.md](./docs/README.md)）。
+- **`decisions/`**: **架构决策记录 (ADR)**，可选。仅记录架构决策，不承担计划 / 任务 / 回顾职能；日常任务不写 ADR，走 Git commit 与 PR 描述即可。
 
 ---
 

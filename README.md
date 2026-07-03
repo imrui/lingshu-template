@@ -53,13 +53,8 @@
 │   ├── rules/                   # AI 规则 SSoT
 │   │   ├── lingshu-core.md      # 架构核心准则
 │   │   └── ai-behavior.md       # 智能体行为准则
-│   ├── docs/                    # 静态真理：PRD、契约、架构
-│   ├── experience/              # 经验复利：高分 Prompt、避坑笔记
-│   └── management/              # 动态治理
-│       ├── plans/               # 战略：原始方案 (.plan.md)
-│       ├── tasks/               # 战术：执行 Checklists
-│       ├── walkthroughs/        # 存证：逻辑决策、代码演练
-│       └── reports/             # 审计：汇总报告、数据库变更
+│   ├── docs/                    # 静态真理：PRD、契约、架构（可扩张 prd/、tad/）
+│   └── decisions/               # ADR：架构决策记录（可选，仅架构级决策才写）
 │
 ├── CLAUDE.md                    # Claude Code 入口（基线，由 lingshu sync 生成）
 ├── AGENTS.md                    # Codex / 通用 Agents 入口（基线，由 lingshu sync 生成）
@@ -188,7 +183,7 @@ grep -rl "lingshu-template" --exclude-dir=node_modules . | xargs sed -i 's/lings
 1. **定策 (Define)**：在 `reference/docs/` 修改功能逻辑或 API 协议
 2. **对齐 (Align)**：若涉及 AI 行为规则，更新 `reference/rules/` 真源
 3. **触动 (Trigger)**：唤醒 AI（Claude Code / Codex / Cursor），发出指令"请根据中枢文档同步更新肢体逻辑"
-4. **皆通 (Sync)**：检查全栈代码逻辑闭环，并产出 `reference/management/walkthroughs/` 存证
+4. **皆通 (Sync)**：检查全栈代码逻辑闭环；架构级决策才写 `reference/decisions/`（ADR）
 
 ---
 
@@ -196,7 +191,7 @@ grep -rl "lingshu-template" --exclude-dir=node_modules . | xargs sed -i 's/lings
 
 1. **文档先行**：禁止在没有更新中枢文档（`reference/docs/`）的情况下直接修改业务代码
 2. **脑体解耦**：中枢仓严禁提交任何属于肢体仓（`*-server/`、`*-ui/` 等）的业务代码
-3. **同频交付**：所有交付报告或技术存证必须记录在 `reference/management/walkthroughs/`，作为逻辑对齐的凭证
+3. **同频交付**：日常任务走 Git commit + PR 描述；仅**架构级决策**记录到 `reference/decisions/`（ADR，可选）
 
 ---
 
