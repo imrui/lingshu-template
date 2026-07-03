@@ -174,7 +174,7 @@ grep -rl "lingshu-template" --exclude-dir=node_modules . | xargs sed -i 's/lings
 ### 自动化机制
 
 - ⚡ **`git pull` 后** → `post-merge` hook 检测 `reference/rules/` 变更，自动 `lingshu sync`
-- 🛡️ **PR 提交时** → GitHub Actions 校验 baseline 产物一致性，漂移即拒绝合并
+- 🛡️ **PR 提交时** → GitHub Actions 校验 baseline 产物一致性（v0.3.2 起可选，`lingshu ci install` 加装）
 
 ---
 
